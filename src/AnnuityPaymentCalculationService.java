@@ -1,9 +1,7 @@
 public class AnnuityPaymentCalculationService {
-    public double calculate(int a, double b, int c) {
+    public double calculate(int creditAmount, double interestRate, int loanTerms) {
         double AnnuityPaymentCalculation;
-        double d = b / 1200;
-        double f = 1 - Math.pow(1 + d, -c);
-        AnnuityPaymentCalculation = a * d / f;
+        AnnuityPaymentCalculation = creditAmount * (interestRate / 1200) / (1 - Math.pow(1 + (interestRate / 1200), -loanTerms));
         return AnnuityPaymentCalculation;
     }
 
